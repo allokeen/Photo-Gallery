@@ -18,7 +18,7 @@ class PhotoController extends Controller
     public function index()
     {
         $images = User::with('photos')->find( auth()->id() );
-        return view('home', compact('images'));
+        return view('photos.index', compact('images'));
     }
 
     /**
