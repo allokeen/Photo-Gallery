@@ -20,7 +20,7 @@
             <br>
             <h3>Go to your galleries now!</h3>
             <br>
-            <a href="{{route("galleries.index")}}">Gallery!</a>
+            <a href="{{route("photos.index")}}">Gallery!</a>
 
         </div>
     </div>

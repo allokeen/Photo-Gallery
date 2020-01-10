@@ -4,8 +4,13 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/galeria_zdjec/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/galeria_zdjec/app" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/barryvdh/laravel-ide-helper" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/barryvdh/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/lexer" />
@@ -21,6 +26,7 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/jakub-onderka/php-console-highlighter" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/justinrainbow/json-schema" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/ui" />
@@ -64,6 +70,8 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/sebastian/resource-operations" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/seld/jsonlint" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/seld/phar-utils" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/css-selector" />
@@ -71,6 +79,7 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/error-handler" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/filesystem" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/http-kernel" />

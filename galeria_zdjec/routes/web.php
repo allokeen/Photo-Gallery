@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/galleries', "GalleryController")->middleware('auth');
+Route::resource('/photos', "PhotoController")->middleware('auth');
 
 Auth::routes();
 

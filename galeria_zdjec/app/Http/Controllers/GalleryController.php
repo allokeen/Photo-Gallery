@@ -15,8 +15,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $images = Gallery::all();
-        return view('galleries.index', compact('images'));
+
     }
 
     /**
@@ -26,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('galleries.create');
+
     }
 
     /**
@@ -37,29 +36,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        $validator      =   Validator::make($request->all(),
-            ['filename'      =>   'required|mimes:jpeg,png,jpg,bmp|max:2048']);
 
-        // if validation fails
-        if($validator->fails()) {
-            return back()->withErrors($validator->errors());
-        }
-
-        // if validation success
-        if($image   =   $request->file('filename')) {
-
-            $name      =   time().time().'.'.$image->getClientOriginalExtension();
-
-            $target_path    =   public_path('/uploads/');
-
-            if($image->move($target_path, $name)) {
-
-                // save file name in the database
-                $image   =   Gallery::create(['filename' => $name]);
-
-                return back()->with("success", "File uploaded successfully");
-            }
-        }
     }
 
     /**
