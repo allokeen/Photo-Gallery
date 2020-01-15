@@ -58,7 +58,6 @@ class PhotoController extends Controller
 
                 // save file name in the database
                 $image   =   Photo::create(['filename' => $name, 'user_id' => auth()->id() ]);
-
                 return back()->with("success", "File uploaded successfully");
             }
         }
@@ -72,7 +71,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-
+        return view('photos.show')->withPhoto($photo);
     }
 
     /**
