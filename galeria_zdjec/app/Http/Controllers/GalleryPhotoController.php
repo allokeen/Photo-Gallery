@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Gallery_Photo;
+use App\GalleryPhoto;
 use Illuminate\Http\Request;
 
 class GalleryPhotoController extends Controller
@@ -41,10 +41,10 @@ class GalleryPhotoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Gallery_Photo  $gallery_Photo
+     * @param  \App\GalleryPhoto  $galleryPhoto
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery_Photo $gallery_Photo)
+    public function show(GalleryPhoto $galleryPhoto)
     {
         //
     }
@@ -52,10 +52,10 @@ class GalleryPhotoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Gallery_Photo  $gallery_Photo
+     * @param  \App\GalleryPhoto  $galleryPhoto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery_Photo $gallery_Photo)
+    public function edit(GalleryPhoto $galleryPhoto)
     {
         //
     }
@@ -64,10 +64,10 @@ class GalleryPhotoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Gallery_Photo  $gallery_Photo
+     * @param  \App\GalleryPhoto  $galleryPhoto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery_Photo $gallery_Photo)
+    public function update(Request $request, GalleryPhoto $galleryPhoto)
     {
         //
     }
@@ -75,10 +75,10 @@ class GalleryPhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Gallery_Photo  $gallery_Photo
+     * @param  \App\GalleryPhoto  $galleryPhoto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery_Photo $gallery_Photo)
+    public function destroy(GalleryPhoto $galleryPhoto)
     {
         //
     }
