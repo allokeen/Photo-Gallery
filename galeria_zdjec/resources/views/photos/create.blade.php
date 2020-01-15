@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="container mt-5">
+        <a href="{{ url('/photos') }}"><< Back to gallery</a>
         <form action="{{ route('photos.store') }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 m-auto">
                     <div class="card shadow">
                         <div class="card-header bg-info text-white">
                             <div class="card-title ">
-                                <h4> Laravel 6 File Upload </h4>
+                                <h4> Upload file </h4>
                             </div>
                         </div>
 
