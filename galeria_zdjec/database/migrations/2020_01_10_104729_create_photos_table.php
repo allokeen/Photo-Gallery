@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->string('filename');
             $table->bigInteger('user_id');
+            $table->bigInteger('gallery_id');
             $table->timestamps();
         });
     }
