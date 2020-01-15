@@ -27,10 +27,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Photo extends Model
 {
-    protected $fillable = ['filename', 'user_id', 'description'];
+    protected $fillable = ['filename', 'user_id', 'gallery_id'];
 
     public function photos()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function galleries()
+    {
+        return $this->belongsToMany('App\Gallery');
     }
 }
