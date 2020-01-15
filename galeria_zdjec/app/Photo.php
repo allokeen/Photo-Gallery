@@ -24,10 +24,14 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property int $user_id
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereUserId($value)
+ * @property string $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Gallery[] $galleries
+ * @property-read int|null $galleries_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereDescription($value)
  */
 class Photo extends Model
 {
-    protected $fillable = ['filename', 'user_id', 'gallery_id'];
+    protected $fillable = ['filename', 'user_id', 'description'];
 
     public function photos()
     {
