@@ -24,6 +24,6 @@ class Gallery extends Model
 {
     public function photos()
     {
-        return $this->hasMany('App\Photo');
+        return $this->belongsToMany('App\Photo');
     }
 }
