@@ -82,7 +82,7 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('photos.edit')->withPhoto($photo);
     }
 
     /**
@@ -94,7 +94,13 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        //
+        /*->validate($request, [
+            'description' => 'required'
+        ]);*/
+
+        $photo->description = $request -> description;
+        $photo->save();
+        return redirect()->route('photos.show', $photo);
     }
 
     /**
