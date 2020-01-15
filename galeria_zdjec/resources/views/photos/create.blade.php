@@ -26,7 +26,8 @@
 
                             <div class="form-group" {{ $errors->has('filename') ? 'has-error' : '' }}>
                                 <label for="filename"></label>
-                                <input type="file" name="filename" id="filename" class="form-control">
+                                <input type="file" name="filename" id="filename" class="form-control"><br>
+                                <input type="text" name="description" id="description" class="form-control">
                                 <span class="text-danger"> {{ $errors->first('filename') }}</span>
                             </div>
                         </div>

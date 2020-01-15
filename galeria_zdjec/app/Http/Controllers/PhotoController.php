@@ -57,7 +57,7 @@ class PhotoController extends Controller
             if($image->move($target_path, $name)) {
 
                 // save file name in the database
-                $image   =   Photo::create(['filename' => $name, 'user_id' => auth()->id() ]);
+                $image = Photo::create(['filename' => $name, 'user_id' => auth() -> id(), 'description' => $request->description]);
                 return back()->with("success", "File uploaded successfully");
             }
         }
