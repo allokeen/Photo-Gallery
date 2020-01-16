@@ -25,11 +25,20 @@
                                 </div>
                             @endif
 
-                            <div class="form-group" {{ $errors->has('filename') ? 'has-error' : '' }}>
+                            <div class="form-group" {{ $errors->has('galleryName') ? 'has-error' : '' }}>
                                 <label for="filename"></label>
-                                <p>Gallery Name</p>
-                                <input type="text" name="galleryName" id="galleryName" class="form-control"><br>
+                                <input type="text" name="galleryName" id="galleryName" placeholder="Gallery name" class="form-control"><br>
                                 <span class="text-danger"> {{ $errors->first('galleryName') }}</span>
+
+                                @if(Session::has('galleryNameExists'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('galleryNameExists') }}
+                                        @php
+                                            Session::forget('galleryNameExists');
+                                        @endphp
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
 
@@ -42,5 +51,6 @@
                     </div>
                 </div>
             </div>
+        </form>
     </div>
 @endsection

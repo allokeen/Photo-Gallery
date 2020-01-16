@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h2>{{$gallery -> galleryName}}</h2>
-        <a href="{{route("")}}"></a>
+        <form action="{{ route('galleries.store') }}" method="post" enctype="multipart/form-data">
+        </form>
     </div>
 @endsection

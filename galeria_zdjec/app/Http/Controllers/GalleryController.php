@@ -39,12 +39,17 @@ class GalleryController extends Controller
             return back()->withErrors($validator->errors());
         }
 
-        // if validation success
-        $gallery = new Gallery();
-        $gallery->galleryName = $request->galleryName;
-        $gallery->save();
+        //if gallery with that name exists
+        if(Gallery::where('galleryName', '=', $request->galleryName )->count() > 0){
+            return back()->with('galleryNameExists', "Gallery named " . $request->galleryName . " exists! Choose another name.");
+        }
+        else {
+            $gallery = new Gallery();
+            $gallery->galleryName = $request->galleryName;
+            $gallery->save();
 
-        return back()->with("success", "Gallery created successfully");
+            return back()->with("success", "Gallery created successfully");
+        }
     }
 
     /**
@@ -55,7 +60,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-
+        return back()->with("Hello");
     }
 
     /**
