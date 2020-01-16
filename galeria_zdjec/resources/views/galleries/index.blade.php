@@ -2,11 +2,17 @@
 
 @section('content')
     <div class="container">
-        <h2>Galerie</h2>
+        <h2>Galerries</h2>
 
-        @foreach($galleries as $gallery)
-            <a href="{{"/galleries/" . $gallery->id}}"> {{$gallery -> galleryName}} </a>
-        @endforeach
+        <a href="{{route("galleries.create")}}">Create new galery!</a><br><br>
+
+        <ul>
+            @foreach($galleries as $gallery)
+                <li>
+                    <a href="{{"/galleries/" . $gallery->id}}"> {{$gallery -> galleryName}} </a>
+                </li>
+            @endforeach
+        </ul>
 
     </div>
 @endsection

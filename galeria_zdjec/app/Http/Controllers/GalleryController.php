@@ -26,7 +26,25 @@ class GalleryController extends Controller
      */
     public function create()
     {
+        return view('galleries.create');
+    }
 
+    public function createGallery(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            ['galleryName' => 'required:galleryName']);
+
+        // if validation fails
+        if($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
+        // if validation success
+        $gallery = new Gallery();
+        $gallery->galleryName = $request->galleryName;
+        $gallery->save();
+
+        return back()->with("success", "Gallery created successfully");
     }
 
     /**

@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('galleries/createGallery', 'GalleryController@createGallery') -> name('galleries.createGallery');
 Route::resource('/galleries', "GalleryController")->middleware('auth');
 Route::resource('/photos', "PhotoController")->middleware('auth');
 
