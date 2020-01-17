@@ -10,6 +10,7 @@ use Config;
 
 class GalleryController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

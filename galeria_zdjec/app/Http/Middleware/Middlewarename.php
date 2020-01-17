@@ -3,8 +3,11 @@
 namespace App\Http\Middleware;
 
 use App\Gallery;
+use App\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Illuminate\View\View;
 
 class Middlewarename
 {
@@ -15,10 +18,17 @@ class Middlewarename
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $token)
+    public function handle($request, Closure $next)
     {
-        if ( $token == url()->current() ) {
-            return $next($request);
-        }
+        $currentPath = $request->segment(count(request()->segments()));
+        $token = $request->route('token');
+
+        echo $token;
+        if ( ! $currentPath  == $token ) {
+            return redirect('login');
+         }
+
+        return $next($request);
     }
 }
+

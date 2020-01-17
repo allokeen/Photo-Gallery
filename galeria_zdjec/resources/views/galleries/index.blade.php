@@ -10,6 +10,7 @@
             @foreach($galleries as $gallery)
                 <li>
                     <a href="{{"/galleries/" . $gallery->token }}"> {{$gallery -> galleryName}} </a>
+                    {{ method_field('POST') }}
                 </li>
             @endforeach
         </ul>

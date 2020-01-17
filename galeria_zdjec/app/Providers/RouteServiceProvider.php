@@ -31,9 +31,8 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        Route::pattern('token', '^JDJ5.*');
         parent::boot();
-
     }
 
     /**

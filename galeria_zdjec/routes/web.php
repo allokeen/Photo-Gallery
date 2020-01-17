@@ -19,12 +19,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('galleries/createGallery', 'GalleryController@createGallery') -> name('galleries.createGallery');
-Route::get('galleries/{token}',[
-   'middleware' => 'linkshare:token',
-   'uses' => 'GalleryController@show',
-]);
+Route::get('galleries/{token}', 'GalleryController@show')->middleware('linkshare');
 
-Route::resource('/galleries', "GalleryController")->middleware('auth');
+Route::resource('/galleries', "GalleryController")->middleware('auth')->except('show');
 Route::resource('/photos', "PhotoController")->middleware('auth');
 
 Auth::routes();
