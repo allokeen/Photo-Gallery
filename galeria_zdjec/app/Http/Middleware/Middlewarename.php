@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Gallery;
 use Closure;
+use Illuminate\Contracts\Auth\Guard;
 
 class Middlewarename
 {
@@ -13,10 +15,10 @@ class Middlewarename
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $token)
     {
-      //  if ($request->token == url()->current()) {
+        if ( $token == url()->current() ) {
             return $next($request);
-       // }
+        }
     }
 }
