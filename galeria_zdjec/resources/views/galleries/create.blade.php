@@ -44,7 +44,7 @@
 
                         <div class="card-footer">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-md"> Upload </button>
+                                <button type="submit" class="btn btn-success btn-md"> Create </button>
                             </div>
                             {{ csrf_field() }}
                         </div>

@@ -4,7 +4,7 @@
     <div class="container">
         <h2>Galerries</h2>
 
-        <a href="{{route("galleries.create")}}">Create new galery!</a><br><br>
+        <a href="{{route("galleries.create")}}">Create a new gallery!</a><br><br>
 
         <ul>
             @foreach($galleries as $gallery)

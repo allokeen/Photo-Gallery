@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ url('/photos') }}"><< Back to gallery</a>
+        <a href="{{ url('/photos') }}"><< Back to gallery</a><br><br>
         <img src="/uploads/{{ $photo->filename }} " class="img-fluid img-thumbnails">
         <br><br>
         <p class="text-muted">{{$photo->description}}</p>

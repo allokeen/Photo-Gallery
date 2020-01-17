@@ -23,7 +23,3 @@ Route::post('galleries/{token}', 'GalleryController@show');
 
 Route::resource('/galleries', "GalleryController");
 Route::resource('/photos', "PhotoController")->middleware('auth');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

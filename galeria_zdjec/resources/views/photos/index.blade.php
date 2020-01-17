@@ -4,8 +4,8 @@
     <div class="container">
         <h2>Pseudoinstagram</h2>
 
-        <a href="{{route("photos.create")}}">Załaduj nowe zdjęcie!</a> &nbsp &nbsp
-        <a href="{{route("galleries.index")}}">Galerie</a>
+        <a href="{{route("photos.create")}}">Load a new photo</a> &nbsp &nbsp
+        <a href="{{route("galleries.index")}}">Your galleries</a>
 
         <div class="row">
             @foreach($images->photos as $file)
