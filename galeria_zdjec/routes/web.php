@@ -16,9 +16,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/galleries', "GalleryController")->middleware('auth');
+
+Route::post('galleries/createGallery', 'GalleryController@createGallery') -> name('galleries.createGallery');
+Route::post('galleries/{token}', 'GalleryController@show');
+
+Route::resource('/galleries', "GalleryController");
 Route::resource('/photos', "PhotoController")->middleware('auth');
 
 Auth::routes();

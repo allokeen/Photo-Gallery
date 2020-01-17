@@ -57,7 +57,7 @@ class PhotoController extends Controller
             if($image->move($target_path, $name)) {
 
                 // save file name in the database
-                $image   =   Photo::create(['filename' => $name, 'user_id' => auth()->id() ]);
+                $image = Photo::create(['filename' => $name, 'user_id' => auth() -> id(), 'description' => $request->description]);
                 return back()->with("success", "File uploaded successfully");
             }
         }
@@ -82,7 +82,7 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('photos.edit')->withPhoto($photo);
     }
 
     /**
@@ -94,7 +94,13 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        //
+        /*->validate($request, [
+            'description' => 'required'
+        ]);*/
+
+        $photo->description = $request -> description;
+        $photo->save();
+        return redirect()->route('photos.show', $photo);
     }
 
     /**
@@ -105,6 +111,8 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        $photo->delete();
+
+        return redirect()->route('photos.index');
     }
 }

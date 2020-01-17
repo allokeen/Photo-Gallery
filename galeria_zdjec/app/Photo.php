@@ -22,10 +22,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereUserID($value)
  * @mixin \Eloquent
+ * @property int $user_id
+ * @property string $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Gallery[] $galleries
+ * @property-read int|null $galleries_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereDescription($value)
  */
 class Photo extends Model
 {
-    protected $fillable = ['filename', 'user_id'];
+    protected $fillable = ['filename', 'user_id', 'description'];
 
     public function user()
     {
