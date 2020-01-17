@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('galleries/createGallery', 'GalleryController@createGallery') -> name('galleries.createGallery');
 Route::post('galleries/generateToken', 'GalleryController@generateToken') -> name('galleries.generateToken');
 Route::get('galleries/{token}', 'GalleryController@show');
-
+Route::get(view('galleries.show'),'GalleryController@show')->middleware('linkshare');
 Route::resource('/galleries', "GalleryController")->middleware('auth');
 Route::resource('/photos', "PhotoController")->middleware('auth');
 
