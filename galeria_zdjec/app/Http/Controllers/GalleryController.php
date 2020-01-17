@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Hash;
+use Config;
 
 class GalleryController extends Controller
 {
@@ -43,8 +45,10 @@ class GalleryController extends Controller
         if(Gallery::where('galleryName', '=', $request->galleryName )->count() > 0){
             return back()->with('galleryNameExists', "Gallery named " . $request->galleryName . " exists! Choose another name.");
         }
+
         else {
             $gallery = new Gallery();
+            $gallery->token = base64_encode(Hash::make($gallery->id . Config::get('APP_KEY')));
             $gallery->galleryName = $request->galleryName;
             $gallery->save();
 

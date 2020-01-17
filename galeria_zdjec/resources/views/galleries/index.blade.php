@@ -9,7 +9,7 @@
         <ul>
             @foreach($galleries as $gallery)
                 <li>
-                    <a href="{{"/galleries/" . $gallery->id}}"> {{$gallery -> galleryName}} </a>
+                    <a href="{{"/galleries/" . $gallery->token }}"> {{$gallery -> galleryName}} </a>
                 </li>
             @endforeach
         </ul>
