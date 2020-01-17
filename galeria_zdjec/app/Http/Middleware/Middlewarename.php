@@ -20,15 +20,19 @@ class Middlewarename
      */
     public function handle($request, Closure $next)
     {
-        $currentPath = $request->segment(count(request()->segments()));
+       /* $currentPath = $request->segment(count(request()->segments()));
         $token = $request->route('token');
 
         echo $token;
         if ( ! $currentPath  == $token ) {
             return redirect('login');
-         }
+         }*/
 
-        return $next($request);
+        if(Gallery::where('token', '=', $request->route('token') )->count() > 0){
+            return redirect('galleries/'. $request->route('token'));
+        }
+        else
+            return $next($request);
     }
 }
 

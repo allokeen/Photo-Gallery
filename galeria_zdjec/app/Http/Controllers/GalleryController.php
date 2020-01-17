@@ -10,6 +10,10 @@ use Config;
 
 class GalleryController extends Controller
 {
+    public function __construct() {
+        $this->middleware('linkshare')->only('show');
+        $this->middleware('auth', ['except' => array('show')]);
+    }
 
     /**
      * Display a listing of the resource.
