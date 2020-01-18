@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Gallery;
 use App\GalleryPhoto;
+use App\Photo;
+use App\User;
 use Illuminate\Http\Request;
 
 class GalleryPhotoController extends Controller
@@ -14,7 +17,8 @@ class GalleryPhotoController extends Controller
      */
     public function index()
     {
-        //
+        $images = User::with('photos')->find( auth()->id() );
+        return view('gallery_photos.index', compact('images'));
     }
 
     /**
@@ -41,12 +45,12 @@ class GalleryPhotoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\GalleryPhoto  $galleryPhoto
+     * @param Photo $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(GalleryPhoto $galleryPhoto)
+    public function show(Photo $photo)
     {
-        //
+        return view('gallery_photos.show')->withPhoto($photo);
     }
 
     /**
