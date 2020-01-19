@@ -39,7 +39,12 @@ class GalleryPhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gallery_photo = new GalleryPhoto();
+
+        $gallery_photo->photo_id = $request->photo->id;
+        $gallery_photo->gallery_id = $request->gallery->id;
+
+
     }
 
     /**
