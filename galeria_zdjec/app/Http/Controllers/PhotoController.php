@@ -7,6 +7,7 @@ use App\Gallery;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Storage;
 
 class PhotoController extends Controller
 {
@@ -94,10 +95,6 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        /*->validate($request, [
-            'description' => 'required'
-        ]);*/
-
         $photo->description = $request -> description;
         $photo->save();
         return redirect()->route('photos.show', $photo);
@@ -111,8 +108,10 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        $file= $photo->filename;
+        $filename = public_path().'/uploads/'.$file;
+        \File::delete($filename);
         $photo->delete();
-
         return redirect()->route('photos.index');
     }
 }
