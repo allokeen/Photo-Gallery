@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h3>Pick photos</h3>
+        <a href="{{route("/galleries/" . $gallery->token)}}">sss</a>
         <form action="{{ route('galleries.storeToGallery', ['id'=>$id]) }}" method="post" enctype="multipart/form-data">
             <!-- print success message after file upload  -->
             @if(Session::has('status'))
