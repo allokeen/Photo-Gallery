@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Hash;
@@ -33,7 +34,14 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('galleries.create');
+        $images = User::with('photos')->find( auth()->id() );
+        return view('galleries.create', compact('images'));
+    }
+
+    public function add($id)
+    {
+        $images = User::with('photos')->find( auth()->id() );
+        return view('galleries.add')->withId($id)->withImages($images);
     }
 
     public function createGallery(Request $request)
@@ -69,7 +77,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        return back()->with("Hello");
+            
     }
 
     /**

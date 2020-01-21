@@ -4,7 +4,7 @@
     <div class="container">
         <h2>{{$gallery -> galleryName}}</h2>
 
-        <a href="{{route("gallery_photos.index")}}">Add a photo to this gallery</a>
+        <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br><br>
 
     </div>
 @endsection

@@ -18,8 +18,7 @@ class GalleryPhotoController extends Controller
      */
     public function index()
     {
-        $images = User::with('photos')->find( auth()->id() );
-        return view('gallery_photos.index', compact('images'));
+
     }
 
     /**
