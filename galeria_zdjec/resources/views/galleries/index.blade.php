@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Galerries</h2>
+        <h2>Galleries</h2>
 
         <a href="{{route("galleries.create")}}">Create a new gallery!</a><br><br>
 
