@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Photo[] $photos
  * @property-read int|null $photos_count
+ * @property string $token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Gallery whereToken($value)
  */
 class Gallery extends Model
 {
