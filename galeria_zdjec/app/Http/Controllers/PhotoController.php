@@ -41,8 +41,8 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         $validator      =   Validator::make($request->all(),
-            ['filename'      =>   'required|mimes:jpeg,png,jpg,bmp|max:2048']);
-
+            ['filename'      =>   'required|mimes:jpeg,png,jpg,bmp|max:2048',
+            'description' => 'required']);
         // if validation fails
         if($validator->fails()) {
             return back()->withErrors($validator->errors());
@@ -111,6 +111,7 @@ class PhotoController extends Controller
         $file= $photo->filename;
         $filename = public_path().'/uploads/'.$file;
         \File::delete($filename);
+
         $photo->delete();
         return redirect()->route('photos.index');
     }
