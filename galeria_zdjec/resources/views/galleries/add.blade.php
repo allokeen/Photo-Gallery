@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h3>{{$id}}</h3>
-        <form action="{{ route('gallery_photos.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('galleries.storeToGallery', ['id'=>$id]) }}" method="post" enctype="multipart/form-data">
             <!-- print success message after file upload  -->
             @if(Session::has('success'))
                 <div class="alert alert-success">
@@ -17,10 +17,12 @@
             <div class="row">
                 @foreach($images->photos as $file)
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 m-auto p-2">
-                        <label class="image-checkbox" title="imageID" id="{{$file->id}}">
+
+                        <label class="image-checkbox" title="1" id="1">
                             <img src="/uploads/{{ $file->filename }} " class="img-fluid img-thumbnails" />
-                            <input type="checkbox" name="imageID" id value="italy" />
+                            <input type="checkbox" name="{{$file->id}}" id="1" />
                         </label>
+
                     </div>
                 @endforeach
                 <span class="text-danger"> {{ $errors->first('filename') }}</span>
