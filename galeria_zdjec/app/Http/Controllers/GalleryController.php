@@ -45,6 +45,12 @@ class GalleryController extends Controller
         return view('galleries.add')->withId($id)->withImages($images);
     }
 
+    public function deletePhoto(GalleryPhoto $galleryPhoto)
+    {
+        $galleryPhoto->delete();
+        return view( 'galleries.deletePhoto');
+    }
+
     public function createGallery(Request $request)
     {
         $validator = Validator::make($request->all(),
@@ -133,6 +139,10 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
+        //if gallery with that name exists
+        if(Gallery::where('galleryName', '=', $request->galleryName )->count() > 0){
+            return back()->with('galleryNameExists', "Gallery named " . $request->galleryName . " exists! Choose another name.");
+        }
         $gallery->galleryName = $request -> galleryName;
         $gallery->save();
         return redirect()->route('galleries.show', $gallery);

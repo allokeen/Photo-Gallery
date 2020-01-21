@@ -2,14 +2,15 @@
 
 @section('content')
     <div class="container">
-        <h3>Pick photos</h3>
-        <form action="{{ route('galleries.storeToGallery', ['id'=>$id]) }}" method="post" enctype="multipart/form-data">
-            <!-- print success message after file upload  -->
-            @if(Session::has('status'))
+        <h3>{{$id}}</h3>
+        <form action="{{ route('gallery_photos.deletePhoto') }}" method="post" enctype="multipart/form-data">
+            <!-- print success message after file delete -->
+            {{ method_field('DELETE') }}
+            @if(Session::has('success'))
                 <div class="alert alert-success">
-                    {{ Session::get('status') }}
+                    {{ Session::get('success') }}
                     @php
-                        Session::forget('status');
+                        Session::forget('success');
                     @endphp
                 </div>
             @endif
@@ -17,12 +18,10 @@
             <div class="row">
                 @foreach($images->photos as $file)
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 m-auto p-2">
-
-                        <label class="image-checkbox" title="1" id="1">
+                        <label class="image-checkbox" title="imageID" id="{{$file->id}}">
                             <img src="/uploads/{{ $file->filename }} " class="img-fluid img-thumbnails" />
-                            <input type="checkbox" name="{{$file->id}}" id="1" />
+                            <input type="checkbox" name="imageID" id value="italy" />
                         </label>
-
                     </div>
                 @endforeach
                 <span class="text-danger"> {{ $errors->first('filename') }}</span>
@@ -31,7 +30,7 @@
 
             <div class="card-footer">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-md"> Upload to gallery</button>
+                    <button type="submit" class="btn btn-success btn-md"> Upload </button>
                 </div>
                 {{ csrf_field() }}
             </div>
