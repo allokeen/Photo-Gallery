@@ -6,6 +6,7 @@ use App\Gallery;
 use App\GalleryPhoto;
 use App\Photo;
 use App\User;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class GalleryPhotoController extends Controller
@@ -39,12 +40,20 @@ class GalleryPhotoController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),
+            ['imageName' => 'required:galleryName']);
+
+        // if validation fails
+        if($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
         $gallery_photo = new GalleryPhoto();
-
-        $gallery_photo->photo_id = $request->photo->id;
+        $gallery_photo->photo_id = $request->imageID;
         $gallery_photo->gallery_id = $request->gallery->id;
+        $gallery_photo->save();
 
-
+        return back()->with("success", "Photo added to gallery successfully");
     }
 
     /**
