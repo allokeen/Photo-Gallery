@@ -50,7 +50,6 @@ class GalleryPhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        return view('gallery_photos.show')->withPhoto($photo);
     }
 
     /**

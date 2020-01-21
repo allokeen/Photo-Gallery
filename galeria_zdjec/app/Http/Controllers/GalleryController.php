@@ -24,7 +24,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::all();
+        $galleries = auth()->user()->galleries;
         return view('galleries.index')->withGalleries($galleries);
     }
 
@@ -63,6 +63,7 @@ class GalleryController extends Controller
         else {
             $gallery = new Gallery();
             $gallery->token = base64_encode(Hash::make($gallery->id . Config::get('APP_KEY')));
+            $gallery->user_id = auth() -> id();
             $gallery->galleryName = $request->galleryName;
             $gallery->save();
 
