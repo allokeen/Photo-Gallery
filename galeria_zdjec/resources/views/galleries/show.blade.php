@@ -16,7 +16,8 @@
             <input type="submit" value="Delete" class="btn btn-outline-primary btn-sm">
         </form>
 
-        <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br><br>
+        <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br>
+
 
         @foreach($images as $file)
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 m-auto p-2">

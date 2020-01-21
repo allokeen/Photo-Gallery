@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\GalleryPhoto;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -73,6 +74,25 @@ class GalleryController extends Controller
 
             return back()->with("success", "Gallery created successfully");
         }
+    }
+
+    public function storeToGallery(Request $request, $id)
+    {
+        $images = auth()->user()->photos;
+
+        foreach($images as $image)
+        {
+            if( isset( $request[$image->id] ) )
+            {
+                $gallery_photo = new GalleryPhoto();
+                $gallery_photo->photo_id = $image->id;
+                $gallery_photo->gallery_id = $id;
+                $gallery_photo->save();
+            }
+        }
+
+        return back()->with('status', 'Photo added to gallery successfully!');
+
     }
 
     /**

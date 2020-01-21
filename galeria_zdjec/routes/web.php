@@ -22,6 +22,7 @@ Route::post('galleries/createGallery', 'GalleryController@createGallery') -> nam
 Route::get('galleries/{id}/addToGallery', 'GalleryController@add') -> name('galleries.add');
 Route::post('galleries/{token}', 'GalleryController@show');
 Route::post('galleries/deletePhoto', 'GalleryController@deletePhoto')->name('galleries.deletePhoto');
+Route::match(['get', 'post'], 'galleries/{id}/addToGallery/storeToGallery', 'GalleryController@storeToGallery')->name('galleries.storeToGallery');
 
 Route::resource('/galleries', "GalleryController");
 Route::resource('/photos', "PhotoController")->middleware('auth');

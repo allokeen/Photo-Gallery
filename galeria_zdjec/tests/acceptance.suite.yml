@@ -14,6 +14,7 @@ modules:
             url: http://127.0.0.1:8000/
             browser: chrome
         - \Helper\Acceptance
+        - Asserts
         - Db:
             dsn: 'mysql:host=localhost;dbname=test'
             user: 'test'
