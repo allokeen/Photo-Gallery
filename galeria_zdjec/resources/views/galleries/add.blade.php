@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h3>{{$id}}</h3>
+        <h3>Pick photos</h3>
         <form action="{{ route('galleries.storeToGallery', ['id'=>$id]) }}" method="post" enctype="multipart/form-data">
             <!-- print success message after file upload  -->
             @if(Session::has('status'))
@@ -31,7 +31,7 @@
 
             <div class="card-footer">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-md"> Upload </button>
+                    <button type="submit" class="btn btn-success btn-md"> Upload to gallery</button>
                 </div>
                 {{ csrf_field() }}
             </div>
