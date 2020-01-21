@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="container">
-        <h2>{{$gallery -> galleryName}}</h2>
-
+        <a href="{{ url('/galleries') }}"><< Back to galleries</a>
+        <h2>{{$gallery -> galleryName}}</h2><br>
+        <form method="post" action="{{ route('galleries.edit', $gallery) }}">
+            {{ method_field('GET') }}
+            {{ csrf_field() }}
+            <input type="submit" value="Edit" class="btn btn-outline-primary btn-sm">
+        </form>
         <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br><br>
-
     </div>
 @endsection

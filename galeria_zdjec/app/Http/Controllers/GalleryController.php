@@ -63,7 +63,7 @@ class GalleryController extends Controller
         else {
             $gallery = new Gallery();
             $gallery->token = base64_encode(Hash::make($gallery->id . Config::get('APP_KEY')));
-            //$gallery->galleryName = $request->galleryName;
+            $gallery->galleryName = $request->galleryName;
             $gallery->save();
 
             return back()->with("success", "Gallery created successfully");
@@ -119,7 +119,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+        return view('galleries.edit')->withGallery($gallery);
     }
 
     /**
@@ -131,7 +131,9 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        $gallery->galleryName = $request -> galleryName;
+        $gallery->save();
+        return redirect()->route('galleries.show', $gallery);
     }
 
     /**
