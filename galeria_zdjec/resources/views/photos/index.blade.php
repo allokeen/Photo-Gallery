@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h2>Wassup amma gallery</h2>
+        <h2>Pseudoinstagram</h2>
 
-        <a href="{{route("photos.create")}}">Załaduj nowe zdjęcie!</a>
+        <a href="{{route("photos.create")}}">Load a new photo</a> &nbsp &nbsp
+        <a href="{{route("galleries.index")}}">Your galleries</a>
 
         <div class="row">
             @foreach($images->photos as $file)

@@ -19,8 +19,26 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Gallery whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Gallery whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Photo[] $photos
+ * @property-read int|null $photos_count
+ * @property string $token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Gallery whereToken($value)
  */
 class Gallery extends Model
 {
+    public function photos()
+    {
+        return $this->belongsToMany('App\Photo', 'gallery_photos');
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'token';
+    }
 
 }

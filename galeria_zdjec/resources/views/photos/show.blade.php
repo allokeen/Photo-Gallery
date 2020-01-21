@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container ">
-        <a href="{{ url('/photos') }}"><< Back to gallery</a>
+        <a href="{{ url('/photos') }}"><< Back to main gallery</a>
 
         <div class = "d-flex justify-content-center">
         <div class="card " style="width: 45rem;">
@@ -13,6 +13,7 @@
         </div>
         </div>
         <div class="d-flex flex-row " style="height: 200px;">
+
         <form method="post" action="{{ route('photos.edit', $photo) }}">
             {{ method_field('GET') }}
             {{ csrf_field() }}
