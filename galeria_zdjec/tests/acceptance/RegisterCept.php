@@ -22,4 +22,10 @@ $I->fillField("password_confirmation", $password);
 $I->dontSeeInDatabase("users", ["name" => $name, "email" => $email]);
 $I->click('//*[@id="app"]/main/div/div/div/div/div[2]/form/div[5]/div/button');
 $I->seeInDatabase("users", ["name" => $name, "email" => $email]);
+
+$I->amGoingTo("make sure that password was securely hashed");
+
+$I->dontSeeInDatabase("users", ["password" => $password]);
 $I->seeCurrentUrlEquals('/home');
+$passwordHash = $I->grabFromDatabase("users", "password", ["name" => $name, "email" => $email]);
+$I->assertTrue(password_verify($password, $passwordHash));
