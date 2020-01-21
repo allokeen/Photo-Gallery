@@ -11,5 +11,7 @@
             {{ csrf_field() }}
             <input type="submit" value="Add" class="btn btn-outline-primary btn-sm">
         </form>
+
+
     </div>
 @endsection

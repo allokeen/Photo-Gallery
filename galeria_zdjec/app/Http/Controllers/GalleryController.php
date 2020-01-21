@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\GalleryPhoto;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Hash;
@@ -33,7 +35,14 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('galleries.create');
+        $images = User::with('photos')->find( auth()->id() );
+        return view('galleries.create', compact('images'));
+    }
+
+    public function add($id)
+    {
+        $images = User::with('photos')->find( auth()->id() );
+        return view('galleries.add')->withId($id)->withImages($images);
     }
 
     public function createGallery(Request $request)
@@ -61,6 +70,25 @@ class GalleryController extends Controller
         }
     }
 
+    public function storeToGallery(Request $request, $id)
+    {
+        $images = auth()->user()->photos;
+
+        foreach($images as $image)
+        {
+            if( isset( $request[$image->id] ) )
+            {
+                $gallery_photo = new GalleryPhoto();
+                $gallery_photo->photo_id = $image->id;
+                $gallery_photo->gallery_id = $id;
+                $gallery_photo->save();
+            }
+        }
+
+        return back()->with('status', 'Photo added to gallery successfully!');
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -69,7 +97,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        return back()->with("Hello");
+
     }
 
     /**
@@ -80,7 +108,8 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        return view('galleries.show')->withGallery($gallery);
+        $images = $gallery->photos;
+        return view('galleries.show')->withGallery($gallery)->withImages($images);
     }
 
     /**
@@ -91,7 +120,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+        return view('galleries.edit')->withGallery($gallery);
     }
 
     /**
@@ -103,7 +132,9 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        $gallery->galleryName = $request -> galleryName;
+        $gallery->save();
+        return redirect()->route('galleries.show', $gallery);
     }
 
     /**
@@ -114,6 +145,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $gallery->delete();
+        return redirect()->route('galleries.index');
     }
 }

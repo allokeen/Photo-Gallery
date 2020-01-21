@@ -6,6 +6,7 @@ use App\Gallery;
 use App\GalleryPhoto;
 use App\Photo;
 use App\User;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class GalleryPhotoController extends Controller
@@ -17,8 +18,7 @@ class GalleryPhotoController extends Controller
      */
     public function index()
     {
-        $images = User::with('photos')->find( auth()->id() );
-        return view('gallery_photos.index', compact('images'));
+
     }
 
     /**
@@ -39,11 +39,6 @@ class GalleryPhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $gallery_photo = new GalleryPhoto();
-
-        $gallery_photo->photo_id = $request->photo->id;
-        $gallery_photo->gallery_id = $request->gallery->id;
-
 
     }
 
