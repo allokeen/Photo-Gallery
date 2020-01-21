@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('galleries/createGallery', 'GalleryController@createGallery') -> name('galleries.createGallery');
 Route::get('galleries/{id}/addToGallery', 'GalleryController@add') -> name('galleries.add');
 Route::post('galleries/{token}', 'GalleryController@show');
+Route::post('galleries/deletePhoto', 'GalleryController@deletePhoto')->name('galleries.deletePhoto');
 
 Route::resource('/galleries', "GalleryController");
 Route::resource('/photos', "PhotoController")->middleware('auth');

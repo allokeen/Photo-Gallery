@@ -44,6 +44,12 @@ class GalleryController extends Controller
         return view('galleries.add')->withId($id)->withImages($images);
     }
 
+    public function deletePhoto(GalleryPhoto $galleryPhoto)
+    {
+        $galleryPhoto->delete();
+        return view( 'galleries.deletePhoto');
+    }
+
     public function createGallery(Request $request)
     {
         $validator = Validator::make($request->all(),
@@ -88,7 +94,8 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        return view('galleries.show')->withGallery($gallery);
+        $images = $gallery->photos;
+        return view('galleries.show')->withGallery($gallery)->withImages($images);
     }
 
     /**
