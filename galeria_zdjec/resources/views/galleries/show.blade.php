@@ -9,6 +9,13 @@
             {{ csrf_field() }}
             <input type="submit" value="Edit" class="btn btn-outline-primary btn-sm">
         </form>
+        &nbsp
+        <form method="post" action="{{ route('galleries.destroy', $gallery) }}">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <input type="submit" value="Delete" class="btn btn-outline-primary btn-sm">
+        </form>
+
         <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br><br>
     </div>
 @endsection
