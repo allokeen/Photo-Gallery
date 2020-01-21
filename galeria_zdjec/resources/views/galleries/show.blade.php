@@ -17,7 +17,7 @@
         </form>
 
         <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br>
-
+        <a href="{{route("galleries.deletePhoto", ['id'=>$gallery->id])}}">Delete photo</a><br>
 
         @foreach($images as $file)
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 m-auto p-2">
