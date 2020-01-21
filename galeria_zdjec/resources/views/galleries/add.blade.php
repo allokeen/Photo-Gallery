@@ -5,11 +5,11 @@
         <h3>{{$id}}</h3>
         <form action="{{ route('galleries.storeToGallery', ['id'=>$id]) }}" method="post" enctype="multipart/form-data">
             <!-- print success message after file upload  -->
-            @if(Session::has('success'))
+            @if(Session::has('status'))
                 <div class="alert alert-success">
-                    {{ Session::get('success') }}
+                    {{ Session::get('status') }}
                     @php
-                        Session::forget('success');
+                        Session::forget('status');
                     @endphp
                 </div>
             @endif

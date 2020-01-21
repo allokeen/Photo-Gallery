@@ -108,7 +108,8 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        return view('galleries.show')->withGallery($gallery);
+        $images = $gallery->photos;
+        return view('galleries.show')->withGallery($gallery)->withImages($images);
     }
 
     /**
