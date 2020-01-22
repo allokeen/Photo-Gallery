@@ -28,7 +28,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $galleries_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereDescription($value)
  * @property-read \App\User $user
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Photo whereUserId($value)
  */
 class Photo extends Model
 {

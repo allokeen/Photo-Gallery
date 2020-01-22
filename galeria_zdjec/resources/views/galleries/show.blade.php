@@ -5,8 +5,8 @@
 
         <h2>{{$gallery -> galleryName}}</h2>
         <a href="{{ url('/galleries') }}"><< Back to galleries</a><br><br>
-        <a href="{{route("galleries.add", ['id'=>$gallery->id])}}">Add a photo to this gallery!</a><br>
-        <a href="{{route("galleries.deletePhoto", ['id'=>$gallery->id])}}">Delete photo</a><br>
+        <a href="{{route("galleries.add", ['id'=>$gallery->id, 'token'=>$gallery->token])}}">Add a photo to this gallery!</a><br>
+        <a href="{{route("galleries.deletePhoto", ['id'=>$gallery->id])}}">Delete photo</a><br><br>
         <div class="d-flex flex-row " style="height: 200px;">
         <form method="post" action="{{ route('galleries.edit', $gallery) }}">
             {{ method_field('GET') }}

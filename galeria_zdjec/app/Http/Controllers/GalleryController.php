@@ -39,10 +39,10 @@ class GalleryController extends Controller
         return view('galleries.create', compact('images'));
     }
 
-    public function add($id)
+    public function add(Gallery $gallery, $id)
     {
         $images = User::with('photos')->find( auth()->id() );
-        return view('galleries.add')->withId($id)->withImages($images);
+        return view('galleries.add', compact('images'))->withGallery($gallery)->withId($id);
     }
 
     public function deletePhoto(GalleryPhoto $galleryPhoto)
@@ -104,7 +104,7 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
