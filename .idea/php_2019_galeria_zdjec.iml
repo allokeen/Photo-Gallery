@@ -6,6 +6,16 @@
       <sourceFolder url="file://$MODULE_DIR$/galeria_zdjec/app" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/barryvdh/laravel-ide-helper" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/barryvdh/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/behat/gherkin" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/codeception" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/lib-asserts" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/lib-innerbrowser" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/module-asserts" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/module-db" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/module-phpbrowser" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/module-webdriver" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/phpunit-wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/codeception/stub" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/cache" />
@@ -16,13 +26,16 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/dragonmantank/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/egulias/email-validator" />
-      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/erusev/parsedown" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/facade/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/facade/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/facebook/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/fideloper/proxy" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/jakub-onderka/php-console-highlighter" />
@@ -30,6 +43,8 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/league/commonmark-ext-table" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/monolog/monolog" />
@@ -41,6 +56,7 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/php-webdriver/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phpdocumentor/type-resolver" />
@@ -53,9 +69,11 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/scrivo/highlight.php" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/sebastian/code-unit-reverse-lookup" />
@@ -73,9 +91,11 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/seld/jsonlint" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/seld/phar-utils" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/dom-crawler" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/error-handler" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/event-dispatcher-contracts" />
@@ -96,6 +116,7 @@
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/galeria_zdjec/vendor/vlucas/phpdotenv" />
