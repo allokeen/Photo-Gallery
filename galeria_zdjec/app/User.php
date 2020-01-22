@@ -43,6 +43,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Photo');
     }
 
+    public function galleries()
+    {
+        return $this->hasMany('App\Gallery');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

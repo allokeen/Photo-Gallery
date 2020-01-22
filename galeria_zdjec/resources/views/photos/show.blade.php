@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container ">
-        <a href="{{ url('/photos') }}"><< Back to main gallery</a>
+        <a href="{{ url('/photos') }}"><< Back to all photos</a>
 
         <div class = "d-flex justify-content-center">
         <div class="card " style="width: 45rem;">

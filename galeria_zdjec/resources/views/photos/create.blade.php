@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <a href="{{ url('/photos') }}"><< Back to gallery</a>
+        <a href="{{ url('/photos') }}"><< Back to all photos</a>
         <form action="{{ route('photos.store') }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 m-auto">

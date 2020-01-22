@@ -24,7 +24,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::all();
+        $galleries = auth()->user()->galleries;
         return view('galleries.index')->withGalleries($galleries);
     }
 
@@ -45,6 +45,12 @@ class GalleryController extends Controller
         return view('galleries.add')->withId($id)->withImages($images);
     }
 
+    public function deletePhoto(GalleryPhoto $galleryPhoto)
+    {
+        $galleryPhoto->delete();
+        return view( 'galleries.deletePhoto');
+    }
+
     public function createGallery(Request $request)
     {
         $validator = Validator::make($request->all(),
@@ -63,6 +69,7 @@ class GalleryController extends Controller
         else {
             $gallery = new Gallery();
             $gallery->token = base64_encode(Hash::make($gallery->id . Config::get('APP_KEY')));
+            $gallery->user_id = auth() -> id();
             $gallery->galleryName = $request->galleryName;
             $gallery->save();
 
@@ -132,6 +139,10 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
+        //if gallery with that name exists
+        if(Gallery::where('galleryName', '=', $request->galleryName )->count() > 0){
+            return back()->with('galleryNameExists', "Gallery named " . $request->galleryName . " exists! Choose another name.");
+        }
         $gallery->galleryName = $request -> galleryName;
         $gallery->save();
         return redirect()->route('galleries.show', $gallery);

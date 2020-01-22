@@ -31,6 +31,11 @@ class Gallery extends Model
         return $this->belongsToMany('App\Photo', 'gallery_photos');
     }
 
+    public function galleries()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     /**
      * Get the route key for the model.
      *
