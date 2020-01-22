@@ -19,7 +19,7 @@ $I->fillField("email", $email);
 $I->fillField("password", $password);
 $I->fillField("password_confirmation", $password);
 
-$I->dontSeeInDatabase("users", ["name" => $name, "email" => $email]);
+$I->dontSeeInDatabase("users", ["email" => $email]);
 $I->click('//*[@id="app"]/main/div/div/div/div/div[2]/form/div[5]/div/button');
 $I->seeInDatabase("users", ["name" => $name, "email" => $email]);
 

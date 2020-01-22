@@ -51,3 +51,7 @@ $photoId = $I->grabFromDatabase("photos", "filename", ["user_id" => $I->grabFrom
 $I->seeInSource($photoId);
 $photoId2 = $I->grabFromDatabase("photos", "filename", ["user_id" => $I->grabFromDatabase("users", "id", ["email" => "mail@com.com"])]);
 $I->dontSeeInSource($photoId2);
+$I->click("//*[@id=\"navbarDropdown\"]");
+$I->click("//*[@id=\"navbarSupportedContent\"]/ul[2]/li/div/a");
+$I->see("Login");
+$I->see("Register");
